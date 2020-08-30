@@ -1,0 +1,76 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    color: black;
+}
+
+.react-autosuggest__container 
+{
+    position: relative;
+}
+  
+.react-autosuggest__input 
+{
+    font-size: 1rem;
+    border: none;
+    width:100%;
+    height:50px;
+    padding:10px 20px;
+    outline: none;
+}
+  
+.react-autosuggest__input--open 
+{
+    border-bottom-left-radius:  0;
+    border-bottom-right-radius: 0;
+}
+  
+.react-autosuggest__suggestions-container
+{
+    display: none;
+}
+  
+.react-autosuggest__suggestions-container--open 
+{
+    display:block;
+    position:absolute;
+    top:30px;
+    width:100%;
+    min-width:160px;
+    margin-top: 20px;
+    background-color: rgba(250,250,250,0.5);
+    border-radius:0 0 4px 4px;
+    z-index:2;
+    box-shadow:0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip:padding-box;
+}
+  
+.react-autosuggest__suggestions-list 
+{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+
+.react-autosuggest__suggestion 
+{
+    color: white;
+    cursor:pointer;
+    padding:10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted 
+{
+    background-color:#FBD46D;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  
+    background: transparent;
+}
+
+.links{
+    text-decoration: none;
+}

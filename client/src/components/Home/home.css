@@ -1,0 +1,40 @@
+.Home .Header {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.Home .Header .header-image {
+  min-height: 570px;
+  background: url(../../assets/girl-clapperboard.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.Home .Header .header-image .header-container {
+  max-width: 900px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 570px;
+}
+
+.Home .Header .header-image .header-container .header-text {
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.Home .landing-lists {
+  margin-top: 100px;
+}
+/*# sourceMappingURL=home.css.map */

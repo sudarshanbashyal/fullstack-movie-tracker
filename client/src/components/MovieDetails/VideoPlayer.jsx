@@ -1,0 +1,37 @@
+import React,{useEffect,useState} from 'react'
+
+const VideoPlayer = ({id}) => {
+
+    const [videoKey,setVideoKey]=useState('')
+    const [playing,setPlaying]=useState(false)
+    
+    useEffect(()=>{
+        (async function getVideo(){
+            const response=await fetch(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}`)
+            const data=await response.json()
+            console.log(data)
+            if(data.results[0]){
+                setVideoKey(data.results[0].key)
+            }
+
+        })()
+    },[videoKey])
+
+    const video=<iframe className='video' src={`https://www.youtube-nocookie.com/embed/${videoKey}?autoplay=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&fs=0&color=white&controls=0`} frameBorder="0"></iframe>
+
+    return (
+        <div className='VideoPlayer'>
+            {
+                videoKey&&
+                <div className="player">
+            
+                    {video}
+
+                </div> 
+            }      
+
+        </div>
+    )
+}
+
+export default VideoPlayer

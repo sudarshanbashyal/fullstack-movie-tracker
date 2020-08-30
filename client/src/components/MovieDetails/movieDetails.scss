@@ -1,0 +1,132 @@
+$yellow:#FBD46D;
+$dark-yellow:#eebd37;
+$green:#559C82;
+
+@mixin button($background-color,$margin){
+    border: none;
+    background-color: $background-color;
+    padding: 0.6rem 1.2rem 0.8rem 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid black;
+
+    svg{
+        transform:scale(0.9) translateY(6px);
+        margin-right: $margin;
+    }
+}
+
+.MovieDetails{
+    max-width: 1300px;
+    margin: auto;
+
+    .movie-details{
+        margin-top: 80px;
+        display: flex;
+
+        .movie-details-poster {
+            margin-right: 100px;
+
+            img{
+                width: 317px;
+                height: 415px;
+                object-position: center;
+                object-fit: cover;
+            }
+            
+        }
+
+        .movie-info{
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: space-between;
+
+            .movie-title{
+                font-size: 3rem;
+            }
+
+            .genre{
+                span{
+                    color: $green;
+                    margin-right: 10px;
+                    font-weight: 500;
+
+                    &:after{
+                        content:','
+                    }
+
+                    &:last-child{
+                        &::after{
+                            content: '';
+                        }
+                    }
+                }
+                margin-bottom: 40px;
+            }
+
+            .overview{
+                margin-bottom: 40px;
+            }
+
+            .sign-info{
+                display: flex;
+                margin-bottom: 40px;
+
+                span{
+                    font-weight: 500;
+                    margin-right: 50px;
+
+                    svg{
+                        fill: $dark-yellow;
+                        transform: translateY(5px);
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            .buttons{
+                
+                .watchlist-btn{
+                    
+                    @include button($yellow,10px);
+
+                }
+
+                .favourite-btn{
+                    @include button(transparent,0);
+                    margin-left: -2px;
+
+                    svg{
+                        fill: #EB4C4C;
+                    }
+                }
+                
+            }
+        }
+
+    }
+
+    .VideoPlayer{
+        margin-top: 50px;
+        margin-bottom: 150px;
+
+        .player{
+            
+            width: 100%;
+            height: 0;
+            position: relative;
+            padding-bottom: 56.25%;
+
+            iframe{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+        
+    }
+}

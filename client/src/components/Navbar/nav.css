@@ -1,0 +1,60 @@
+.Navbar {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 100%;
+  height: 7vh;
+  background-color: #FBD46D;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.Navbar .navmenu {
+  height: 7vh;
+  max-width: 1300px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Navbar .navmenu .logo {
+  width: 35px;
+}
+
+.Navbar .navmenu .logo:hover {
+  cursor: pointer;
+}
+
+.Navbar .navmenu .nav-items ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.Navbar .navmenu .nav-items ul li {
+  margin-right: 45px;
+}
+
+.Navbar .navmenu .nav-items ul li:last-child {
+  margin-right: 0px;
+}
+
+.Navbar .navmenu .nav-items ul li:hover {
+  cursor: pointer;
+}
+
+.Navbar .navmenu .search-icon {
+  cursor: pointer;
+}
+/*# sourceMappingURL=nav.css.map */

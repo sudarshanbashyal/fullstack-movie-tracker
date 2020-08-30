@@ -1,0 +1,66 @@
+.MovieList {
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 70px;
+}
+
+.MovieList .list-title {
+  font-size: 3rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.MovieList .list-title .list-line {
+  margin-left: 10px;
+  min-height: 6px;
+  min-width: 40px;
+  background-color: black;
+}
+
+.MovieList .movie-scroll {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.MovieList .movie-scroll .empty {
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: lightgray;
+}
+
+.MovieList .movie-scroll .empty svg {
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  margin-right: 30px;
+  fill: lightgray;
+}
+
+.MovieList .Movie {
+  margin-right: 40px;
+}
+
+.MovieList .Movie .movie-card .movie-poster img {
+  width: 185px;
+  height: 284px;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.MovieList .Movie .movie-card .movie-release-date {
+  color: #559C82;
+}
+/*# sourceMappingURL=movieList.css.map */
