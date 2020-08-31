@@ -13,9 +13,9 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "env-cmd .env react-scripts start",
-    "build": "env-cmd .env react-scripts build",
-    "test": "env-cmd .env react-scripts test",
+    "start": "env-cmd -f .env react-scripts start",
+    "build": "env-cmd -f .env react-scripts build",
+    "test": "env-cmd -f .env react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

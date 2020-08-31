@@ -26,7 +26,11 @@ const Nav = () => {
                                 Genre
                             </Link>
                         </li>
-                        <li>Login</li>
+                        <li>
+                            <Link className='links' to='login'>
+                                Login
+                            </Link>
+                        </li>
                         <li>Register</li>
                     </ul>
                 </div>

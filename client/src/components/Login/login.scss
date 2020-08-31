@@ -1,0 +1,48 @@
+$yellow:#FBD46D;
+$green:#559C82;
+$lightgray:#F3F3F3;
+
+.Login{
+    max-width: 600px;
+    margin: auto;
+    min-height: 200px;
+
+    h1{
+        font-size: 3rem;
+        margin-top: 100px;
+    }
+
+    form{
+
+        margin-top: 50px;
+
+        input{
+            width: 100%;
+            border: none;
+            background-color: $lightgray;
+            font-size: 1.05rem;
+            padding: 0.8rem 1rem;
+            margin-bottom: 20px;
+        }
+
+        .register-btn{
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: $yellow;
+            border: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+    }
+
+    .form-message{
+        text-align:center;
+
+        .links{
+            margin-left: 5px;
+            font-weight: 700;
+        }
+    }
+}

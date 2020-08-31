@@ -1,0 +1,44 @@
+.Login {
+  max-width: 600px;
+  margin: auto;
+  min-height: 200px;
+}
+
+.Login h1 {
+  font-size: 3rem;
+  margin-top: 100px;
+}
+
+.Login form {
+  margin-top: 50px;
+}
+
+.Login form input {
+  width: 100%;
+  border: none;
+  background-color: #F3F3F3;
+  font-size: 1.05rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 20px;
+}
+
+.Login form .register-btn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: #FBD46D;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.Login .form-message {
+  text-align: center;
+}
+
+.Login .form-message .links {
+  margin-left: 5px;
+  font-weight: 700;
+}
+/*# sourceMappingURL=login.css.map */
