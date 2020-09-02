@@ -3,6 +3,7 @@ import './movieList.css'
 import {gql,useQuery} from '@apollo/client'
 
 import Movie from './Movie/Movie'
+import LoadingAnimation from '../Loader/LoadingSpinner'
 
 const GENRE_MOVIE_QUERY=gql`
     query GenreMovieQUery($id:Int!){
@@ -31,9 +32,9 @@ const GenreMovieList = ({name,id}) => {
 
             <div className="movie-scroll">
                 {
-                    data&&data.moviesFromGenre.map(movie=>(
+                    data?data.moviesFromGenre.map(movie=>(
                         <Movie key={movie.id} id={movie.id} title={movie.title} release_date={movie.release_date} poster_path={movie.poster_path} />
-                    ))
+                    )):<LoadingAnimation />
                 }
             </div>
             

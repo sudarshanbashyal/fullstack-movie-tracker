@@ -5,11 +5,14 @@ const cors=require('cors')
 app.use(express.json())
 app.use(cors())
 
+// database and routes
+require('./database/db')
+const authenticationRoute=require('./routes/Authentication.route')
+app.use(authenticationRoute)
 
+
+// graphql
 const schema=require('./schema')
-
-const dotenv=require('dotenv')
-dotenv.config();
 
 const {graphqlHTTP}=require('express-graphql')
 

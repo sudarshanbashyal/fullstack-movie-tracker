@@ -29,6 +29,7 @@
   display: -ms-flexbox;
   display: flex;
   overflow-x: scroll;
+  min-height: 405px;
 }
 
 .MovieList .movie-scroll .empty {

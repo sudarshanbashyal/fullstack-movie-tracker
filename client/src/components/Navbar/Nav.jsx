@@ -22,16 +22,20 @@ const Nav = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link className='links' to='genres'>
+                            <Link className='links' to='/genres'>
                                 Genre
                             </Link>
                         </li>
                         <li>
-                            <Link className='links' to='login'>
+                            <Link className='links' to='/login'>
                                 Login
                             </Link>
                         </li>
-                        <li>Register</li>
+                        <li>
+                            <Link className='links' to='/register'>
+                                Register
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 <svg 

@@ -3,6 +3,7 @@ import './movieList.css'
 import {gql,useQuery} from '@apollo/client'
 
 import Movie from './Movie/Movie'
+import LoadingAnimation from '../Loader/LoadingSpinner'
 
 const MOVIE_LIST_QUERY=gql`
     query MovieListQuery($listName:String!){
@@ -31,12 +32,11 @@ const MovieList = ({listName,title}) => {
             </h1>
 
             <div className="movie-scroll">
-                {
-                    data&&data.movies.map(movie=>(
+                {   
+                    data?data.movies.map(movie=>(
                         <Movie key={movie.id} id={movie.id} title={movie.title} release_date={movie.release_date} poster_path={movie.poster_path} />
-                    ))
-                    
-            }
+                    )):<LoadingAnimation/>
+                }
             </div>
             
         </div>
