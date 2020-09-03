@@ -1,12 +1,13 @@
-import React,{useState} from 'react'
-import './nav.css'
-import logo from '../../assets/logo.png'
-import SearchForm from '../SearchForm/SearchForm'
-import {useHistory,Link} from 'react-router-dom'
+import React,{useState, useConext} from 'react';
+import './nav.css';
+import logo from '../../assets/logo.png';
+import SearchForm from '../SearchForm/SearchForm';
+import {useHistory,Link} from 'react-router-dom';
 
 const Nav = () => {
-    const history=useHistory()
-    const [showSearch,setShowSearch]=useState(false)
+    
+    const history=useHistory();
+    const [showSearch,setShowSearch]=useState(false);
 
     return (
         <div className='Navbar'>
@@ -26,11 +27,13 @@ const Nav = () => {
                                 Genre
                             </Link>
                         </li>
-                        <li>
-                            <Link className='links' to='/login'>
-                                Login
-                            </Link>
-                        </li>
+                        {
+                            <li>
+                                <Link className='links' to='/login'>
+                                    Login
+                                </Link>
+                            </li>
+                        }
                         <li>
                             <Link className='links' to='/register'>
                                 Register
