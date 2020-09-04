@@ -37,7 +37,8 @@ export const GlobalProvider=({children})=>{
                     type:'SET_USER',
                     payload:{
                         user:data.user,
-                        token:data.token
+                        token:data.token,
+                        movieList:data.list
                     }
                 })
             }
@@ -110,7 +111,7 @@ export const GlobalProvider=({children})=>{
 
         }
         catch(err){
-
+            console.log(err);
         }
     }
 
@@ -121,13 +122,37 @@ export const GlobalProvider=({children})=>{
         })
     }
 
+    async function addMovie(listName,userId,movieId,runtime,movieTitle){
+        try{
+
+            const response=await fetch('http://localhost:4000/addMovie',{
+                method:'POST',
+                headers:{
+                    'Content-type':'application/json'
+                },
+                body:JSON.stringify({
+                    listName,
+                    userId,
+                    movieId,
+                    runtime,
+                    movieTitle
+                })
+            })
+
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+
     return(
         <GlobalContext.Provider value={{
             state,
             checkToken,
             logInUser,
             logOutUser,
-            registerUser
+            registerUser,
+            addMovie
         }}>
             {children}
         </GlobalContext.Provider>

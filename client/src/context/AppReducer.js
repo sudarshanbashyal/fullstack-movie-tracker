@@ -7,7 +7,8 @@ export const AppReducer = (state,action)=>{
                 ...state,
                 error:"",
                 user:action.payload.user,
-                token:action.payload.token
+                token:action.payload.token,
+                movieList:action.payload.movieList
             }
 
         case 'DISPLAY_ERROR':

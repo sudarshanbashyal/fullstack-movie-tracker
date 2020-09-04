@@ -106,9 +106,10 @@ router.post('/login',async(req,res)=>{
             user:{
                 _id:user._id,
                 name:user.name,
-                email:user.email
+                email:user.email,
             },
-            token
+            token,
+            list:user.movieList
         })
 
     }
@@ -120,12 +121,31 @@ router.post('/login',async(req,res)=>{
     }
 })
 
-// private route
-router.get('/watchlist', auth, async(req,res)=>{
+// private routes
+router.post('/addMovie',async(req,res)=>{
     try{
+        console.log(req.body)
+        const {listName,userId,movieId,runtime,movieTitle}=req.body;
 
-        // send in watchlist of the user
-        
+        const movie={
+            id:movieId,
+            title:movieTitle,
+            runtime:runtime,
+            listName:listName,
+            dateAdded:Date.now()
+        }
+
+        const updatedList=await User.findOneAndUpdate(
+            {_id:userId},
+            {$push:{movieList:movie}},
+            {new:true}
+        );
+
+        return res.json({
+            ok:true,
+            updatedList
+        })
+
     }
     catch(err){
         return res.json({
@@ -135,7 +155,7 @@ router.get('/watchlist', auth, async(req,res)=>{
     }
 })
 
-// 
+// validate token
 router.post('/tokenIsValid',async(req,res)=>{
     try{
 
@@ -145,7 +165,7 @@ router.post('/tokenIsValid',async(req,res)=>{
         const verified=jwt.verify(token,process.env.JWT_ACCESS_TOKEN);
         if(!verified) return res.json({ok:false});
 
-        const user=await User.findById(verified.id)
+        const user=await User.findById(verified.id);
         if(!user) return res.json({ok:false});
 
         return res.json({
@@ -154,7 +174,8 @@ router.post('/tokenIsValid',async(req,res)=>{
             user:{
                 id:user._id,
                 name:user.name
-            }
+            },
+            list:user.movieList
         });
 
     }

@@ -1,5 +1,5 @@
-const mongoose=require('mongoose')
-const Schema=mongoose.Schema
+const mongoose=require('mongoose');
+const Schema=mongoose.Schema;
 
 module.exports=mongoose.model('User',Schema({
     name:{
@@ -14,5 +14,6 @@ module.exports=mongoose.model('User',Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    movieList:[{}]
 }))
