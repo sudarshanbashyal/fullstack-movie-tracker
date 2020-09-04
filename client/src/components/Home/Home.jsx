@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useConext} from 'react'
 import './home.css'
 import Header from './Header/Header'
 import MovieList from '../MovieLists/MovieList'
 
 const Home = () => {
+
     return (
         <div className='Home'>
             <Header/>

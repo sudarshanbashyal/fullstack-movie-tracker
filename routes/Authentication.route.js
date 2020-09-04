@@ -14,7 +14,7 @@ router.post('/register',async(req,res)=>{
         const {name,email,password,confirmPassword}=req.body;
 
         // check all credentials
-        if(!name||!email||!password){
+        if(!name||!email||!password||!confirmPassword){
             return res.status(400).json({
                 ok:false,
                 error:'Please enter all the credentials.'

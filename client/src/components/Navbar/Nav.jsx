@@ -1,10 +1,14 @@
-import React,{useState, useConext} from 'react';
+import React, {useState, useContext} from 'react';
 import './nav.css';
 import logo from '../../assets/logo.png';
 import SearchForm from '../SearchForm/SearchForm';
-import {useHistory,Link} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
+
+import {GlobalContext} from '../../context/GlobalState';
 
 const Nav = () => {
+
+    const {state,logOutUser}=useContext(GlobalContext);
     
     const history=useHistory();
     const [showSearch,setShowSearch]=useState(false);
@@ -28,17 +32,29 @@ const Nav = () => {
                             </Link>
                         </li>
                         {
+                            state.token===''?
                             <li>
                                 <Link className='links' to='/login'>
                                     Login
                                 </Link>
+                            </li>:
+                            <li>
+                                My List
                             </li>
                         }
-                        <li>
-                            <Link className='links' to='/register'>
-                                Register
-                            </Link>
-                        </li>
+                        {
+                            state.token===''?
+                            <li>
+                                <Link className='links' to='/register'>
+                                    Register
+                                </Link>
+                            </li>:
+                            <li onClick={()=>{
+                                logOutUser();
+                            }}>
+                                Log Out
+                            </li>
+                        }
                     </ul>
                 </div>
                 <svg 

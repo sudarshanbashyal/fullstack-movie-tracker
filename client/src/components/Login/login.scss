@@ -10,11 +10,15 @@ $lightgray:#F3F3F3;
     h1{
         font-size: 3rem;
         margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .error{
+        color: rgb(226, 43, 43);
     }
 
     form{
-
-        margin-top: 50px;
+        margin-top: 20px;
 
         input{
             width: 100%;
