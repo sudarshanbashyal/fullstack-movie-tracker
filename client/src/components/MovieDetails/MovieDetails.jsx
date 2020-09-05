@@ -1,11 +1,11 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {gql,useQuery} from '@apollo/client';
 import './movieDetails.css';
 import VideoPlayer from './VideoPlayer';
 import SimilarList from '../MovieLists/SimilarList';
 import { GlobalContext } from '../../context/GlobalState';
 
-import {starSvg, clockSvg, dateSvg, dollarSvg, bookmarkStroke, bookmarkFilled} from './Svg.js';
+import {starSvg, clockSvg, dateSvg, dollarSvg, bookmarkStroke} from './Svg.js';
 
 const MOVIE_QUERY=gql`
     query MovieQuery($id:Int!){
@@ -38,7 +38,7 @@ const MovieDetails = ({match}) => {
 
     const {state,addMovie,removeMovie}=useContext(GlobalContext); 
 
-    const addListBtn=<button className="watchlist-btn" onClick={()=>{addMovie(state.user.id,data.movie.id,data.movie.runtime,data.movie.title,data.movie.poster_path)}}>{bookmarkStroke} Add To Watchlist</button>
+    const addListBtn=<button className="watchlist-btn" onClick={()=>{addMovie(state.user.id,data.movie.id,data.movie.runtime,data.movie.title,data.movie.poster_path,data.movie.vote_average)}}>{bookmarkStroke} Add To Watchlist</button>
     const removeListBtn=<button className="watchlist-btn" onClick={()=>{removeMovie(state.user.id,data.movie.id)}} >{bookmarkStroke} On Your Watchlist</button> 
 
     // check if current movie is in the user's movieList

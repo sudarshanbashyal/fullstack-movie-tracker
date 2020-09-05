@@ -39,7 +39,9 @@ const Nav = () => {
                                 </Link>
                             </li>:
                             <li>
-                                My List
+                                <Link className='links' to='/mylist'>
+                                    My List
+                                </Link>
                             </li>
                         }
                         {

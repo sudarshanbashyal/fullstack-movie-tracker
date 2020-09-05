@@ -1,4 +1,4 @@
-import React,{createContext,useConext, useReducer} from 'react';
+import React,{createContext, useReducer} from 'react';
 import {AppReducer} from './AppReducer';
 
 import history from '../history';
@@ -122,7 +122,7 @@ export const GlobalProvider=({children})=>{
         })
     }
 
-    async function addMovie(userId,movieId,runtime,movieTitle,moviePoster){
+    async function addMovie(userId,movieId,runtime,movieTitle,moviePoster,movieRating){
         try{
 
             const response=await fetch('http://localhost:4000/addMovie',{
@@ -135,7 +135,8 @@ export const GlobalProvider=({children})=>{
                     movieId,
                     runtime,
                     movieTitle,
-                    moviePoster
+                    moviePoster,
+                    movieRating
                 })
             })
 

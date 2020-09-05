@@ -1,4 +1,4 @@
-import React,{useEffect,useState, useContext} from 'react';
+import React,{useEffect, useContext} from 'react';
 import './App.css'
 
 import {Router,Switch,Route} from 'react-router-dom';
@@ -10,6 +10,7 @@ import MovieDetails from './components/MovieDetails/MovieDetails';
 import Genres from './components/Genre/Genres';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
+import Watchlist from './components/Watchlist/Watchlist';
 
 import {GlobalContext} from './context/GlobalState';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -44,6 +45,7 @@ const App = () => {
                         <Route exact path='/genres' component={Genres} />
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/register' component={Register} />
+                        <Route exact path='/mylist' component={Watchlist} />
                     </Switch>
                 </Router>
 

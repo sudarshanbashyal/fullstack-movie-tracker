@@ -1,0 +1,106 @@
+.Watchlist {
+  max-width: 1300px;
+  margin-top: 70px !important;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+.Watchlist .title {
+  margin-bottom: 50px;
+}
+
+.Watchlist .list-container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2rem;
+  -ms-grid-columns: (minmax(450px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+
+.Watchlist .list-container .WatchSingle {
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-shadow: 5px 5px 10px rgba(100, 100, 100, 0.1);
+          box-shadow: 5px 5px 10px rgba(100, 100, 100, 0.1);
+}
+
+.Watchlist .list-container .WatchSingle img {
+  width: 40%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.Watchlist .list-container .WatchSingle .info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.Watchlist .list-container .WatchSingle .info h2 {
+  margin-bottom: 7px;
+}
+
+.Watchlist .list-container .WatchSingle .info svg {
+  -webkit-transform: scale(0.8) translateY(8px);
+          transform: scale(0.8) translateY(8px);
+  margin-right: 5px;
+  fill: #9b9b9b;
+}
+
+.Watchlist .list-container .WatchSingle .info hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0.4px solid lightgray;
+}
+
+.Watchlist .list-container .WatchSingle .info div span {
+  margin-right: 20px;
+}
+
+.Watchlist .list-container .WatchSingle .info .date span {
+  text-transform: uppercase;
+  color: #9b9b9b;
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+.Watchlist .list-container .WatchSingle .info .date .displayDate {
+  color: black;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.Watchlist .list-container .WatchSingle .trash {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  position: absolute;
+  top: 23px;
+  right: 23px;
+  fill: black;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.Watchlist .list-container .WatchSingle .trash:hover {
+  fill: red;
+  background-color: #ffd9d9;
+}
+/*# sourceMappingURL=watchlist.css.map */

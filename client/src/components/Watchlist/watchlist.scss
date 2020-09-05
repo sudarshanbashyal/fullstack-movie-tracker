@@ -1,0 +1,101 @@
+$yellow:#FBD46D;
+$green:#559C82;
+
+.Watchlist{
+    max-width: 1300px;
+    margin-top: 70px !important;
+    margin: auto;
+    padding-bottom: 100px;
+
+    .title{
+        margin-bottom: 50px;
+    }
+
+    .list-container{
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+
+        .WatchSingle{
+            height: 250px;
+            display: flex;
+            position: relative;
+            box-shadow: 5px 5px 10px rgba(100, 100, 100, 0.1);
+
+            img{
+                width: 40%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .info{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                padding: 1rem;
+
+                h2{
+                    margin-bottom: 7px;
+                }
+
+                svg{
+                    transform:scale(0.8) translateY(8px);
+                    margin-right: 5px;
+                    fill: rgb(155, 155, 155);
+                }
+
+                hr{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    border: 0.4px solid rgb(211, 211, 211);
+                }
+
+                div{
+                    span{
+                        margin-right: 20px;
+                    }
+                }
+
+                .date{
+
+                    span{
+                        text-transform: uppercase;
+                        color: rgb(155, 155, 155);
+                        margin-right: 5px;
+                        font-size: 0.9rem;
+                    }
+
+                    .displayDate{
+                        color: black;
+                        font-weight: 500;
+                        font-size: 0.9rem;
+                    }
+                }
+
+            }
+
+            .trash{
+                transform: scale(2);
+                position: absolute;
+                top: 23px;
+                right: 23px;
+                fill: black;
+                cursor: pointer;
+                padding: 7px;
+                border-radius: 50%;
+                background-color: transparent;
+
+                &:hover{
+                    fill: red;
+                    background-color: rgb(255, 217, 217);
+                }
+
+            }
+
+        }
+
+    }
+}
