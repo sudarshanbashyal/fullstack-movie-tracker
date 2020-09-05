@@ -31,6 +31,12 @@ export const AppReducer = (state,action)=>{
                 error:''
             }
 
+        case 'UPDATE_MOVIE_LIST':
+            return{
+                ...state,
+                movieList:action.payload.updatedList.movieList
+            }
+
         default: return state;
     }
 

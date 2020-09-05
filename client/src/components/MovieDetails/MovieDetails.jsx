@@ -1,11 +1,11 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {gql,useQuery} from '@apollo/client';
 import './movieDetails.css';
 import VideoPlayer from './VideoPlayer';
 import SimilarList from '../MovieLists/SimilarList';
 import { GlobalContext } from '../../context/GlobalState';
 
-import {starSvg, clockSvg, dateSvg, dollarSvg} from './Svg.js';
+import {starSvg, clockSvg, dateSvg, dollarSvg, bookmarkStroke, bookmarkFilled} from './Svg.js';
 
 const MOVIE_QUERY=gql`
     query MovieQuery($id:Int!){
@@ -32,11 +32,24 @@ const MovieDetails = ({match}) => {
     let id=match.params.id
     id=parseInt(id)
 
-    const {loading,error,data}=useQuery(MOVIE_QUERY,{
+    const {data}=useQuery(MOVIE_QUERY,{
         variables:{id}
     })
 
-    const {state,addMovie,movielist}=useContext(GlobalContext); 
+    const {state,addMovie,removeMovie}=useContext(GlobalContext); 
+
+    const addListBtn=<button className="watchlist-btn" onClick={()=>{addMovie(state.user.id,data.movie.id,data.movie.runtime,data.movie.title,data.movie.poster_path)}}>{bookmarkStroke} Add To Watchlist</button>
+    const removeListBtn=<button className="watchlist-btn" onClick={()=>{removeMovie(state.user.id,data.movie.id)}} >{bookmarkStroke} On Your Watchlist</button> 
+
+    // check if current movie is in the user's movieList
+    let watchListBtn=addListBtn;
+
+    if(data&&state){
+        const onList=state.movieList.filter(movieInList=>movieInList.id===data.movie.id);
+
+        if(onList[0]) watchListBtn=removeListBtn;
+        else watchListBtn=addListBtn;
+    }
 
     return (
         
@@ -75,14 +88,7 @@ const MovieDetails = ({match}) => {
                             </div>
 
                             <div className="buttons">
-                                <button className="watchlist-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 2v17.582l-4-3.512-4 3.512v-17.582h8zm2-2h-12v24l6-5.269 6 5.269v-24z"/></svg>
-                                    Add to WatchList
-                                </button>
-
-                                <button className="favourite-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.28 3c3.236.001 4.973 3.491 5.72 5.031.75-1.547 2.469-5.021 5.726-5.021 2.058 0 4.274 1.309 4.274 4.182 0 3.442-4.744 7.851-10 13-5.258-5.151-10-9.559-10-13 0-2.676 1.965-4.193 4.28-4.192zm.001-2c-3.183 0-6.281 2.187-6.281 6.192 0 4.661 5.57 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-4.011-3.097-6.182-6.274-6.182-2.204 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248z"/></svg>
-                                </button>
+                                {watchListBtn}
                             </div>
                             
                         </div>                        

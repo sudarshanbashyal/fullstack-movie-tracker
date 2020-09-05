@@ -121,40 +121,6 @@ router.post('/login',async(req,res)=>{
     }
 })
 
-// private routes
-router.post('/addMovie',async(req,res)=>{
-    try{
-        console.log(req.body)
-        const {listName,userId,movieId,runtime,movieTitle}=req.body;
-
-        const movie={
-            id:movieId,
-            title:movieTitle,
-            runtime:runtime,
-            listName:listName,
-            dateAdded:Date.now()
-        }
-
-        const updatedList=await User.findOneAndUpdate(
-            {_id:userId},
-            {$push:{movieList:movie}},
-            {new:true}
-        );
-
-        return res.json({
-            ok:true,
-            updatedList
-        })
-
-    }
-    catch(err){
-        return res.json({
-            ok:false,
-            err
-        })
-    }
-})
-
 // validate token
 router.post('/tokenIsValid',async(req,res)=>{
     try{

@@ -122,7 +122,7 @@ export const GlobalProvider=({children})=>{
         })
     }
 
-    async function addMovie(listName,userId,movieId,runtime,movieTitle){
+    async function addMovie(userId,movieId,runtime,movieTitle,moviePoster){
         try{
 
             const response=await fetch('http://localhost:4000/addMovie',{
@@ -131,14 +131,52 @@ export const GlobalProvider=({children})=>{
                     'Content-type':'application/json'
                 },
                 body:JSON.stringify({
-                    listName,
                     userId,
                     movieId,
                     runtime,
-                    movieTitle
+                    movieTitle,
+                    moviePoster
                 })
             })
 
+            const data=await response.json();
+            if(data.ok){
+                dispatch({
+                    type:'UPDATE_MOVIE_LIST',
+                    payload:{
+                        updatedList:data.updatedList
+                    }
+                })
+            }
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+
+    async function removeMovie(userId,movieId){
+        try{
+            const response=await fetch('http://localhost:4000/removeMovie',{
+                method:'POST',
+                headers:{
+                    'Content-type':'application/json'
+                },
+                body:JSON.stringify({
+                    userId,
+                    movieId
+                })
+            })
+
+            const data=await response.json();
+
+            if(data.ok){
+                dispatch({
+                    type:'UPDATE_MOVIE_LIST',
+                    payload:{
+                        updatedList:data.updatedList
+                    }
+                })
+            }
         }
         catch(err){
             console.log(err);
@@ -152,7 +190,8 @@ export const GlobalProvider=({children})=>{
             logInUser,
             logOutUser,
             registerUser,
-            addMovie
+            addMovie,
+            removeMovie
         }}>
             {children}
         </GlobalContext.Provider>
