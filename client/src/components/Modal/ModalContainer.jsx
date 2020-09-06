@@ -4,6 +4,7 @@ import './modalContainer.css';
 import Login from '../Login/Login';
 import Register from '../Login/Register';
 import Success from '../Login/Success';
+import LogOut from '../Login/LogOut';
 
 import { GlobalContext } from '../../context/GlobalState';
 
@@ -16,6 +17,7 @@ const ModalContainer = () => {
 
             {
                 modal&&
+                modal.modalComponent==='logout'?<LogOut />:
                 modal.modalComponent==='success'?<Success />:
                 modal.modalComponent==='login'?<Login />:<Register />
             }

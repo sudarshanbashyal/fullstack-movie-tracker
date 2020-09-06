@@ -8,10 +8,9 @@ import {GlobalContext} from '../../context/GlobalState';
 
 const Nav = () => {
 
-    const {state,logOutUser,toggleModal}=useContext(GlobalContext);
+    const {state,toggleModal}=useContext(GlobalContext);
     const [showSearch,setShowSearch]=useState(false);
     
-
     return (
         <div className='Navbar'>
             <div className="navmenu">
@@ -50,8 +49,9 @@ const Nav = () => {
                                     Register
                                 </span>
                             </li>:
+
                             <li onClick={()=>{
-                                logOutUser();
+                                toggleModal(true,'logout');
                             }}>
                                 Log Out
                             </li>

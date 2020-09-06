@@ -1,7 +1,7 @@
 .Login {
   width: 425px;
   margin: auto;
-  min-height: 200px;
+  min-height: 50px;
   background-color: white;
   padding: 4rem 3rem;
   border-radius: 5px;
@@ -90,5 +90,76 @@
   margin-bottom: 30px;
   -webkit-transform: scale(3);
           transform: scale(3);
+}
+
+.Logout {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+}
+
+.Logout .icon {
+  width: 15%;
+  min-height: 100%;
+  background-color: #559C82;
+  border-radius: 5px 0px 0px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Logout .icon svg {
+  fill: white;
+}
+
+.Logout .message {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+  height: 100%;
+}
+
+.Logout .message p {
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.Logout .message .buttons {
+  width: 100%;
+}
+
+.Logout .message .buttons .log-btn {
+  background-color: #FBD46D;
+  border: 1px solid #FBD46D;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.Logout .message .buttons .cancel-btn {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 /*# sourceMappingURL=login.css.map */

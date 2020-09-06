@@ -1,4 +1,6 @@
-import React, {useContext} from 'react'
+import React, {useContext} from 'react';
+import {Link} from 'react-router-dom';
+
 import { GlobalContext } from '../../context/GlobalState';
 
 const WatchSingle = ({id,title,runtime,date,poster,rating}) => {
@@ -13,7 +15,11 @@ const WatchSingle = ({id,title,runtime,date,poster,rating}) => {
             <img src={`https://image.tmdb.org/t/p/w500/${poster}`} alt=""/>
 
             <div className="info">
-                <h2>{title}</h2>
+                <h2>
+                    <Link className='links' to={`movie/${id}`}>
+                        {title}
+                    </Link>
+                </h2>
 
                 <span className='date'>
                     <span>Added on:</span> 

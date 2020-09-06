@@ -5,7 +5,7 @@ $lightgray:#F3F3F3;
 .Login{
     width: 425px;
     margin: auto;
-    min-height: 200px;
+    min-height: 50px;
     background-color: white;
     padding: 4rem 3rem;
     border-radius: 5px;
@@ -79,6 +79,64 @@ $lightgray:#F3F3F3;
         fill: rgb(70, 214, 70);
         margin-bottom: 30px;
         transform: scale(3);
+    }
+
+}
+
+.Logout{
+    
+    padding: 0;
+    display: flex;
+    border-radius: 5px;
+
+    .icon{
+        width: 15%;
+        min-height: 100%;
+        background-color: $green;
+        border-radius: 5px 0px 0px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg{
+            fill: white;
+        }
+    }
+
+    .message{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        height: 100%;
+
+        p{
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .buttons{
+            width: 100%;
+
+            .log-btn{
+                background-color: $yellow;
+                border: 1px solid $yellow;
+                padding: 0.6rem 1rem;
+                font-weight: 500;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+
+            .cancel-btn{
+                background-color: transparent;
+                border: 1px solid black;
+                padding: 0.6rem 1rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
     }
 
 }
