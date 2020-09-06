@@ -3,13 +3,16 @@ $green:#559C82;
 $lightgray:#F3F3F3;
 
 .Login{
-    max-width: 600px;
+    width: 425px;
     margin: auto;
     min-height: 200px;
+    background-color: white;
+    padding: 4rem 3rem;
+    border-radius: 5px;
+    position: relative;
 
     h1{
-        font-size: 3rem;
-        margin-top: 100px;
+        font-size: 2rem;
         margin-bottom: 50px;
     }
 
@@ -43,10 +46,39 @@ $lightgray:#F3F3F3;
 
     .form-message{
         text-align:center;
+        user-select: none;
 
         .links{
             margin-left: 5px;
             font-weight: 700;
+            cursor: pointer;
         }
     }
+
+    .close-modal{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        transform: scale(0.7);
+        fill: rgb(173, 173, 173);
+
+        &:hover{
+            fill: black;
+        }
+    }
+}
+
+.Success{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    svg{
+        fill: rgb(70, 214, 70);
+        margin-bottom: 30px;
+        transform: scale(3);
+    }
+
 }

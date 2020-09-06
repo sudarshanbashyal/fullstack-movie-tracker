@@ -11,10 +11,12 @@ const Watchlist = () => {
     const {state}=useContext(GlobalContext);
 
     useEffect(()=>{
-        if(!state.token){
-            history.push('/login');
+        if(state.render){
+            if(state.token===''){
+                history.push('/');
+            }
         }
-    },[])
+    },[state.user])
 
     return (
         <div className='Watchlist'>

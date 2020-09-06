@@ -2,14 +2,18 @@ import React,{createContext, useReducer} from 'react';
 import {AppReducer} from './AppReducer';
 
 import history from '../history';
-import fetch from 'node-fetch';
 
 // state
 const initialState={
+    render:false,
     token:'',
     user:{},
     movieList:[],
-    error:''
+    error:'',
+    modal:{
+        showModal:false,
+        modalComponent:""
+    }
 }
 
 // context
@@ -43,6 +47,10 @@ export const GlobalProvider=({children})=>{
                 })
             }
 
+            else dispatch({
+                type:'RENDER'
+            })
+
         }
         catch(err){
             console.log(err);
@@ -72,7 +80,12 @@ export const GlobalProvider=({children})=>{
             else{
                 localStorage.setItem('auth-token',data.token);
                 checkToken();
-                history.push('/');
+                dispatch({
+                    type:'UPDATE_MODAL_COMPONENT',
+                    payload:{
+                        newComponent:'success'
+                    }
+                })
             }
 
         }   
@@ -104,9 +117,11 @@ export const GlobalProvider=({children})=>{
             }
             else{
                 dispatch({
-                    type:'CLEAR_ERROR'
+                    type:'UPDATE_MODAL_COMPONENT',
+                    payload:{
+                        newComponent:'login'
+                    }
                 })
-                history.push('/login');
             }
 
         }
@@ -117,6 +132,7 @@ export const GlobalProvider=({children})=>{
 
     function logOutUser(){
         localStorage.removeItem('auth-token');
+        history.push('/');
         dispatch({
             type:'LOG_OUT'
         })
@@ -184,6 +200,39 @@ export const GlobalProvider=({children})=>{
         }
     }
 
+    function changeModalComponent(modalComponent){
+        try{
+
+            dispatch({
+                type:'UPDATE_MODAL_COMPONENT',
+                payload:{
+                    newComponent:modalComponent
+                }
+            })
+
+        }
+        catch(err){
+            console.log('err');
+        }
+    }
+
+    function toggleModal(show=false,component=''){
+        try{
+
+            dispatch({
+                type:'TOGGLE_MODAL',
+                payload:{
+                    show,
+                    component
+                }
+            })
+
+        }
+        catch(err){
+            console.log('err');
+        }
+    }
+
     return(
         <GlobalContext.Provider value={{
             state,
@@ -192,7 +241,9 @@ export const GlobalProvider=({children})=>{
             logOutUser,
             registerUser,
             addMovie,
-            removeMovie
+            removeMovie,
+            changeModalComponent,
+            toggleModal
         }}>
             {children}
         </GlobalContext.Provider>

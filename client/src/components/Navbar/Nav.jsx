@@ -8,10 +8,9 @@ import {GlobalContext} from '../../context/GlobalState';
 
 const Nav = () => {
 
-    const {state,logOutUser}=useContext(GlobalContext);
-    
-    const history=useHistory();
+    const {state,logOutUser,toggleModal}=useContext(GlobalContext);
     const [showSearch,setShowSearch]=useState(false);
+    
 
     return (
         <div className='Navbar'>
@@ -34,9 +33,9 @@ const Nav = () => {
                         {
                             state.token===''?
                             <li>
-                                <Link className='links' to='/login'>
+                                <span className='links' onClick={()=>{toggleModal(true,'login')}}>
                                     Login
-                                </Link>
+                                </span>
                             </li>:
                             <li>
                                 <Link className='links' to='/mylist'>
@@ -47,9 +46,9 @@ const Nav = () => {
                         {
                             state.token===''?
                             <li>
-                                <Link className='links' to='/register'>
+                                <span className='links' onClick={()=>{toggleModal(true,'register')}}>
                                     Register
-                                </Link>
+                                </span>
                             </li>:
                             <li onClick={()=>{
                                 logOutUser();

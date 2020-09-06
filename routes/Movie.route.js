@@ -5,13 +5,14 @@ const User=require('../database/models/User.model');
 router.post('/addMovie',async(req,res)=>{
     try{
         console.log(req.body)
-        const {userId,movieId,runtime,movieTitle,moviePoster}=req.body;
+        const {userId,movieId,runtime,movieTitle,moviePoster,movieRating}=req.body;
 
         const movie={
             id:movieId,
             title:movieTitle,
             runtime:runtime,
             moviePoster:moviePoster,
+            movieRating:movieRating,
             dateAdded:Date.now()
         }
 

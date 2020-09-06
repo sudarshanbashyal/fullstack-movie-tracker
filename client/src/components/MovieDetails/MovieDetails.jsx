@@ -36,13 +36,20 @@ const MovieDetails = ({match}) => {
         variables:{id}
     })
 
-    const {state,addMovie,removeMovie}=useContext(GlobalContext); 
+    const {state,addMovie,removeMovie,toggleModal}=useContext(GlobalContext); 
 
-    const addListBtn=<button className="watchlist-btn" onClick={()=>{addMovie(state.user.id,data.movie.id,data.movie.runtime,data.movie.title,data.movie.poster_path,data.movie.vote_average)}}>{bookmarkStroke} Add To Watchlist</button>
+    // add and remove list buttons 
+    const addListBtn=<button className="watchlist-btn" onClick={()=>{
+
+        if(state.token!=='') addMovie(state.user.id,data.movie.id,data.movie.runtime,data.movie.title,data.movie.poster_path,data.movie.vote_average)
+        else toggleModal(true,'login');
+
+    }}>{bookmarkStroke} Add To Watchlist</button>
+
     const removeListBtn=<button className="watchlist-btn" onClick={()=>{removeMovie(state.user.id,data.movie.id)}} >{bookmarkStroke} On Your Watchlist</button> 
 
     // check if current movie is in the user's movieList
-    let watchListBtn=addListBtn;
+    let watchListBtn;
 
     if(data&&state){
         const onList=state.movieList.filter(movieInList=>movieInList.id===data.movie.id);
