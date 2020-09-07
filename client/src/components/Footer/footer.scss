@@ -1,0 +1,21 @@
+$yellow:#FBD46D;
+
+.Footer{
+    height: 7vh;
+    background-color: $yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    svg{
+        z-index: 20;
+        transform: translateY(5px);
+        margin-right: 10px;
+    }
+}

@@ -62,6 +62,7 @@ $lightgray:#F3F3F3;
         cursor: pointer;
         transform: scale(0.7);
         fill: rgb(173, 173, 173);
+        z-index: 21;
 
         &:hover{
             fill: black;
@@ -76,6 +77,8 @@ $lightgray:#F3F3F3;
     justify-content: center;
 
     svg{
+        position: relative;
+        z-index: 20;
         fill: rgb(70, 214, 70);
         margin-bottom: 30px;
         transform: scale(3);
@@ -97,6 +100,8 @@ $lightgray:#F3F3F3;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        z-index: 99;
 
         svg{
             fill: white;

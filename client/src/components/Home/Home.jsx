@@ -1,9 +1,13 @@
-import React, {useConext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import './home.css'
 import Header from './Header/Header'
 import MovieList from '../MovieLists/MovieList'
 
+import { GlobalContext } from '../../context/GlobalState'
+
 const Home = () => {
+
+    const {state:{closeNav}}=useContext(GlobalContext);
 
     return (
         <div className='Home'>

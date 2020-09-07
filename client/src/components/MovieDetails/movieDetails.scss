@@ -25,22 +25,39 @@ $green:#559C82;
         margin-top: 80px;
         display: flex;
 
+        @media (max-width:1050px) {
+            flex-direction: column;
+        }
+
         .movie-details-poster {
             margin-right: 100px;
+
+            @media (max-width:1050px){
+                margin-right: 0;
+                order: 2;
+            }
 
             img{
                 width: 317px;
                 height: 415px;
                 object-position: center;
                 object-fit: cover;
+
+                @media (max-width:1050px){
+                    width: 100%;
+                    height: auto;
+                }
             }
             
         }
 
         .movie-info{
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: space-between;
+
+            @media (max-width:1050px){
+                order: 1;
+                width: 100%;
+                margin-bottom: 70px;
+            }
 
             .movie-title{
                 font-size: 3rem;
@@ -72,10 +89,15 @@ $green:#559C82;
             .sign-info{
                 display: flex;
                 margin-bottom: 40px;
+                flex-wrap: wrap;
 
                 span{
                     font-weight: 500;
                     margin-right: 50px;
+                    
+                    @media (max-width:1050px) {
+                        margin-bottom: 20px;
+                    }
 
                     svg{
                         fill: $dark-yellow;
@@ -90,6 +112,8 @@ $green:#559C82;
                 .watchlist-btn{
                     
                     @include button($yellow,10px);
+                    position: relative;
+                    z-index: -2;
 
                 }
 
@@ -130,3 +154,4 @@ $green:#559C82;
         
     }
 }
+

@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="Header">
             <div className="header-image">
-                <div className="header-container">
+                <div className="header-container half-container">
 
                     <h1 className="header-text">
                         Keep Track of What You Watch.

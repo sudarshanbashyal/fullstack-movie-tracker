@@ -3,11 +3,13 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  position: relative;
+  z-index: 10;
 }
 
 .Home .Header .header-image {
   min-height: 570px;
-  background: url(../../assets/girl-clapperboard.png);
+  background: url(../../assets/girl-clapperboard.jpg);
   background-position: center;
   background-size: cover;
 }

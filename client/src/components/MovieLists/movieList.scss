@@ -5,6 +5,8 @@ $green:#559C82;
     max-width: 1300px;
     margin: auto;
     margin-top: 70px;
+    position: relative;
+    z-index: 10;
 
     .list-title{
         font-size: 3rem;

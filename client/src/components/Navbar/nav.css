@@ -8,6 +8,8 @@
   background-color: #FBD46D;
   position: -webkit-sticky;
   position: sticky;
+  position: relative;
+  z-index: 9999999;
 }
 
 .Navbar .navmenu {
@@ -33,13 +35,45 @@
   cursor: pointer;
 }
 
+@media (max-width: 1050px) {
+  .Navbar .navmenu .logo {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+}
+
+.Navbar .navmenu .nav-items {
+  position: relative;
+  z-index: 9999999;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
 .Navbar .navmenu .nav-items ul {
   list-style: none;
+  position: relative;
+  z-index: 99;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   font-weight: 500;
   font-size: 1.1rem;
+}
+
+@media (max-width: 1050px) {
+  .Navbar .navmenu .nav-items ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5rem 0rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 100%;
+  }
 }
 
 .Navbar .navmenu .nav-items ul li {
@@ -54,7 +88,60 @@
   cursor: pointer;
 }
 
+@media (max-width: 1050px) {
+  .Navbar .navmenu .nav-items ul li {
+    margin-right: 0;
+    display: block;
+  }
+}
+
+@media (max-width: 1050px) {
+  .Navbar .navmenu .nav-items {
+    position: absolute;
+    z-index: 99;
+    height: 93vh;
+    padding: 0;
+    top: 7vh;
+    left: -7vh;
+    background-color: #FBD46D;
+    width: 70vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 500px) {
+  .Navbar .navmenu .nav-items {
+    width: 120vw;
+  }
+}
+
+.Navbar .navmenu .expand {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
 .Navbar .navmenu .search-icon {
+  position: relative;
+  z-index: 999;
   cursor: pointer;
+}
+
+.Navbar .navmenu .hamburger-icon {
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .Navbar .navmenu .hamburger-icon {
+    display: block;
+    position: absolute;
+    top: 40%;
+    z-index: 100;
+  }
 }
 /*# sourceMappingURL=nav.css.map */

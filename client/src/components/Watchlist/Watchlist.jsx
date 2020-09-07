@@ -19,7 +19,7 @@ const Watchlist = () => {
     },[state.user])
 
     return (
-        <div className='Watchlist'>
+        <div className='Watchlist full-container'>
             <h1 className="title">
                 My List
             </h1>

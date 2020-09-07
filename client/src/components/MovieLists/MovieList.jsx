@@ -24,7 +24,7 @@ const MovieList = ({listName,title}) => {
     })
 
     return (
-        <div className='MovieList'>
+        <div className='MovieList full-container'>
 
             <h1 className='list-title'>
                 {title}

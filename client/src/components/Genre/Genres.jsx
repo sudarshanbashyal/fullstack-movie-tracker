@@ -24,12 +24,12 @@ const Genres = () => {
     return (
         <div className='Genres'>
             <div className="genre-header">
-                <div className="genre-text">
+                <div className="genre-text half-container">
                     <h1>Filter Movies By Your Favourite Genre.</h1>
                 </div>
             </div>
 
-            <div className="genre-list">
+            <div className="genre-list half-container">
                 {
                     data&&data.genres.map(genre=>(
                         <span key={genre.id}

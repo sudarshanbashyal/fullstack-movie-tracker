@@ -23,7 +23,7 @@ const GenreMovieList = ({name,id}) => {
     })
 
     return (
-        <div className="MovieList">
+        <div className="MovieList full-container">
 
             <h1 className="list-title">
                 {name}

@@ -13,7 +13,8 @@ const initialState={
     modal:{
         showModal:false,
         modalComponent:""
-    }
+    },
+    navOpen:false
 }
 
 // context
@@ -233,6 +234,28 @@ export const GlobalProvider=({children})=>{
         }
     }
 
+    function toggleNav(){
+        try{
+            dispatch({
+                type:'TOGGLE_NAV'
+            })
+        }
+        catch(err){
+            console.log('err');
+        }
+    }
+
+    function closeNav(){
+        try{
+            dispatch({
+                type:'CLOSE_NAV'
+            })
+        }
+        catch(err){
+            console.log('err');
+        }
+    }
+
     return(
         <GlobalContext.Provider value={{
             state,
@@ -243,7 +266,9 @@ export const GlobalProvider=({children})=>{
             addMovie,
             removeMovie,
             changeModalComponent,
-            toggleModal
+            toggleModal,
+            toggleNav,
+            closeNav
         }}>
             {children}
         </GlobalContext.Provider>

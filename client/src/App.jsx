@@ -26,14 +26,13 @@ const client=new ApolloClient({
 const App = () => {
 
     // authenticate the token on app startup and store the user
-    const {state:{render},checkToken}=useContext(GlobalContext);
+    const {state,checkToken}=useContext(GlobalContext);
 
     useEffect(()=>{
 
         checkToken();
 
     },[])
-    
     
     return (
         <div className='App'>
@@ -47,6 +46,7 @@ const App = () => {
                         <Route exact path='/genres' component={Genres} />
                         <Route exact path='/mylist' component={Watchlist} />
                     </Switch>
+                    <Footer />
                     <ModalContainer />
                 </Router>
 

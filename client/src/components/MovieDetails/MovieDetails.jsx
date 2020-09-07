@@ -60,7 +60,7 @@ const MovieDetails = ({match}) => {
 
     return (
         
-        <div className='MovieDetails'>
+        <div className='MovieDetails full-container'>
             {
                 data&&
                 <div>

@@ -12,5 +12,6 @@
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
+  z-index: 20;
 }
 /*# sourceMappingURL=modalContainer.css.map */

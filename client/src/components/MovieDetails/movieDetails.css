@@ -10,8 +10,26 @@
   display: flex;
 }
 
+@media (max-width: 1050px) {
+  .MovieDetails .movie-details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .MovieDetails .movie-details .movie-details-poster {
   margin-right: 100px;
+}
+
+@media (max-width: 1050px) {
+  .MovieDetails .movie-details .movie-details-poster {
+    margin-right: 0;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 .MovieDetails .movie-details .movie-details-poster img {
@@ -21,6 +39,23 @@
      object-position: center;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (max-width: 1050px) {
+  .MovieDetails .movie-details .movie-details-poster img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1050px) {
+  .MovieDetails .movie-details .movie-info {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 100%;
+    margin-bottom: 70px;
+  }
 }
 
 .MovieDetails .movie-details .movie-info .movie-title {
@@ -54,11 +89,19 @@
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 40px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .MovieDetails .movie-details .movie-info .sign-info span {
   font-weight: 500;
   margin-right: 50px;
+}
+
+@media (max-width: 1050px) {
+  .MovieDetails .movie-details .movie-info .sign-info span {
+    margin-bottom: 20px;
+  }
 }
 
 .MovieDetails .movie-details .movie-info .sign-info span svg {
@@ -76,6 +119,8 @@
   font-size: 1rem;
   cursor: pointer;
   border: 2px solid black;
+  position: relative;
+  z-index: -2;
 }
 
 .MovieDetails .movie-details .movie-info .buttons .watchlist-btn svg {

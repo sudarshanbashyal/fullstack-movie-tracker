@@ -53,6 +53,7 @@ export const AppReducer = (state,action)=>{
             return{
                 ...state,
                 error:"",
+                navOpen:false,
                 modal:{
                     ...state.modal,
                     modalComponent:action.payload.newComponent
@@ -63,11 +64,24 @@ export const AppReducer = (state,action)=>{
             return{
                 ...state,
                 error:'',
+                navOpen:false,
                 modal:{
                     ...state.modal,
                     showModal: action.payload.show,
                     modalComponent: action.payload.component
                 }
+            }
+
+        case 'TOGGLE_NAV':
+            return{
+                ...state,
+                navOpen:!state.navOpen
+            }
+
+        case 'CLOSE_NAV':
+            return{
+                ...state,
+                navOpen:false
             }
 
         default: return state;

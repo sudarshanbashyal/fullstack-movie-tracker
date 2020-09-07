@@ -7,6 +7,8 @@ $green:#559C82;
     height: 7vh;
     background-color:$yellow;
     position: sticky;
+    position: relative;
+    z-index: 9999999;
 
     .navmenu{
         height: 7vh;
@@ -15,6 +17,7 @@ $green:#559C82;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
 
         .logo{
             width: 35px;
@@ -22,16 +25,35 @@ $green:#559C82;
             &:hover{
                 cursor: pointer;
             }
+
+            @media (max-width:1050px){
+                transform: translateX(50px);
+            }
         }
 
         .nav-items{
+            position: relative;
+            z-index: 9999999;
+            transition: 0.2s ease-out;
+
             ul{
                 list-style: none;
+                position: relative;
+                z-index: 99;
                 display: flex;
                 font-weight: 500;
                 font-size: 1.1rem;
 
+                @media(max-width:1050px){
+                    flex-direction: column;
+                    padding: 5rem 0rem;
+                    align-items: center;
+                    justify-content: space-around;
+                    height: 100%;
+                }
+
                 li{
+
                     margin-right: 45px;
 
                     &:last-child{
@@ -41,12 +63,52 @@ $green:#559C82;
                     &:hover{
                         cursor: pointer;
                     }
+
+                    @media(max-width:1050px){
+                        margin-right: 0;
+                        display: block;
+                    }
                 }
+            }
+
+            @media(max-width:1050px){
+                position:absolute;
+                z-index: 99;
+                height: 93vh;
+                padding: 0;
+                top: 7vh;
+                left: -7vh;
+                background-color: $yellow;
+                width: 70vw;
+                flex-direction: column;
+                transform: translateX(-100%);
+            }
+
+            @media(max-width:500px){
+                width: 120vw;
             }
         }
 
+        .expand{
+            transform: translateX(0%);
+        }
+
         .search-icon{
+            position: relative;
+            z-index: 999;
             cursor: pointer;
+        }
+
+        .hamburger-icon{
+            cursor: pointer;
+            display: none;
+
+            @media (max-width:1050px){
+                display: block;
+                position: absolute;
+                top: 40%;
+                z-index: 100;
+            }
         }
 
     }

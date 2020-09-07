@@ -4,10 +4,12 @@ $green:#559C82;
 .Home{
     .Header{
         user-select: none;
+        position: relative;
+        z-index: 10;
         
         .header-image{
             min-height: 570px;
-            background: url(../../assets/girl-clapperboard.png);
+            background: url(../../assets/girl-clapperboard.jpg);
             background-position: center;
             background-size: cover;
 
