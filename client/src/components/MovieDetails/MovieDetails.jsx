@@ -63,15 +63,6 @@ const MovieDetails = ({match}) => {
         else watchListBtn=addListBtn;
     }
 
-    console.log(data);
-
-    // if(data&&!data.id){
-    //     return(
-    //         <NotFound />
-    //     )
-    // }
-
-    // else 
     return (
         
         <div className='MovieDetails full-container'>

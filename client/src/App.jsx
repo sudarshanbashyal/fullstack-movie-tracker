@@ -1,4 +1,4 @@
-import React,{useEffect, useContext, useState} from 'react';
+import React,{useEffect, useContext} from 'react';
 import './App.css'
 
 import {Router,Switch,Route} from 'react-router-dom';
@@ -17,6 +17,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import history from './history';
 import ModalContainer from './components/Modal/ModalContainer';
 
+import disableScroll from 'disable-scroll';
+
 const client=new ApolloClient({
     uri:'/graphql',
     cache: new InMemoryCache()
@@ -26,16 +28,22 @@ const client=new ApolloClient({
 const App = () => {
 
     // authenticate the token on app startup and store the user
-    const {checkToken}=useContext(GlobalContext);
+    const {checkToken,state:{modal:{showModal},navOpen}}=useContext(GlobalContext);
 
     useEffect(()=>{
 
         checkToken();
 
     },[])
+
+    if(showModal||navOpen){
+        disableScroll.on();
+    }
+    else disableScroll.off();
     
     return (
         <div className='App'>
+
             <ApolloProvider client={client}>
 
                 <Router history={history}>

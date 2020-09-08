@@ -95,6 +95,24 @@ const GenreType=new GraphQLObjectType({
     })
 })
 
+const VideoType=new GraphQLObjectType({
+    name:'Video',
+    fields:()=>({
+        results:{
+            type: new GraphQLList(VideoResultType)
+        }
+    })
+})
+
+const VideoResultType=new GraphQLObjectType({
+    name:'VideoResult',
+    fields:()=>({
+        key:{
+            type:GraphQLString
+        }
+    })
+})
+
 
 const RootQuery=new GraphQLObjectType({
     name:'RootQueryType',
@@ -149,6 +167,17 @@ const RootQuery=new GraphQLObjectType({
                 return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${tmdbKey}&with_genres=${args.id}`)
                 .then(res=>res.json())
                 .then(data=>data.results)
+            }
+        },
+        video:{
+            type: VideoType,
+            args:{
+                id:{type:GraphQLInt}
+            },
+            resolve(parent,args){
+                return fetch(`http://api.themoviedb.org/3/movie/${args.id}/videos?api_key=${tmdbKey}`)
+                .then(res=>res.json())
+                .then(data=>data)
             }
         }
     }
