@@ -4,7 +4,7 @@ A full stack movie-tracker application made with React and Node.
 
 ## Demo
 
-**Log in with the following credentials for a full tour of the app.**
+**Log in with the following credentials for a full tour of the app.** <br />
 **Email**:test@user.com
 **Password**:test
 
