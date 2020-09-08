@@ -19,6 +19,7 @@ cd client
 npm install #client modules
 npm start
 ```
+**You will have to create environment variables for your own TMDB api, Mongodb-Atlas and JWT tokens.**
 
 ## Tech-Stack
 
@@ -33,8 +34,6 @@ I've used the following stack to build my application (small libraries not inclu
 | [MongoDB](https://www.mongodb.com/) | NoSQL Database |
 | [Mongoose](https://mongoosejs.com/) | Library to help model MongoDB Objects |
 | [GraphQL](https://graphql.org/) | Query language to hanlde your api data |
-
-**You will have to create environment variables for your own TMDB api, Mongodb-Atlas and JWT tokens.**
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
