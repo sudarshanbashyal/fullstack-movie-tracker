@@ -1,6 +1,6 @@
 # Full-stack Movie tracker
 
-A full stack movie-tracker application made with React and Node.
+A full stack movie-tracker application made with React, Node and [TMDB Api](https://www.themoviedb.org/documentation/api)
 
 ## Demo
 
