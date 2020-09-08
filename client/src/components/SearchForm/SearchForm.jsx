@@ -26,7 +26,7 @@ const SearchForm = () => {
                     return
                 }
                 try{
-                    const response=await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&query=${value}&page=1&include_adult=true`)
+                    const response=await fetch(`https://api.themoviedb.org/3/search/movie?api_key=ed8491f2986b2b920e8351ab4134188f&language=en-US&query=${value}&page=1&include_adult=true`)
                     const data=await response.json()
                     const movieList=data.results
                     const shortList=movieList.slice(0,5)
