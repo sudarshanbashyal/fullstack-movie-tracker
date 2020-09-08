@@ -15,8 +15,8 @@ require('./database/db');
 const movieRoute=require('./routes/Movie.route');
 const authenticationRoute=require('./routes/Authentication.route');
 
-app.use('/movie',movieRoute);
-app.use('/user',authenticationRoute);
+app.use(movieRoute);
+app.use(authenticationRoute);
 
 if(process.env.NODE_ENV==='production'){
     app.use(express.static('client/build'));

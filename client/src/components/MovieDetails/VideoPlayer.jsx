@@ -6,7 +6,7 @@ const VideoPlayer = ({id}) => {
     
     useEffect(()=>{
         (async function getVideo(){
-            const response=await fetch(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}`);
+            const response=await fetch(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=ed8491f2986b2b920e8351ab4134188f`);
             const data=await response.json();
             if(data.results[0]){
                 setVideoKey(data.results[0].key);

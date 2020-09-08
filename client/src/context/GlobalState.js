@@ -29,7 +29,7 @@ export const GlobalProvider=({children})=>{
         try{
 
             const token=localStorage.getItem('auth-token');
-            const response=await fetch('user/tokenIsValid',{
+            const response=await fetch('/tokenIsValid',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json',
@@ -61,7 +61,7 @@ export const GlobalProvider=({children})=>{
     async function logInUser(user){
         try{
 
-            const response=await fetch('user/login',{
+            const response=await fetch('/login',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -98,7 +98,7 @@ export const GlobalProvider=({children})=>{
     async function registerUser(user){
 
         try{
-            const response=await fetch('user/register',{
+            const response=await fetch('/register',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -142,7 +142,7 @@ export const GlobalProvider=({children})=>{
     async function addMovie(userId,movieId,runtime,movieTitle,moviePoster,movieRating){
         try{
 
-            const response=await fetch('movie/addMovie',{
+            const response=await fetch('/addMovie',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -174,7 +174,7 @@ export const GlobalProvider=({children})=>{
 
     async function removeMovie(userId,movieId){
         try{
-            const response=await fetch('movie/removeMovie',{
+            const response=await fetch('/removeMovie',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'

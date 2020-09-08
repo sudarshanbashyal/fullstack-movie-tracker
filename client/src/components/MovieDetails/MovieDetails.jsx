@@ -65,13 +65,14 @@ const MovieDetails = ({match}) => {
 
     console.log(data);
 
-    if(data&&!data.id){
-        return(
-            <NotFound />
-        )
-    }
+    // if(data&&!data.id){
+    //     return(
+    //         <NotFound />
+    //     )
+    // }
 
-    else return (
+    // else 
+    return (
         
         <div className='MovieDetails full-container'>
             {
