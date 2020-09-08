@@ -1,0 +1,14 @@
+.NotFound{
+    min-height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .status{
+        font-size: 5rem;
+        color: lightgray;
+    }
+    
+}

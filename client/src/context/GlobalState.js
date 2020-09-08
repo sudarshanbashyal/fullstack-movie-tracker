@@ -29,7 +29,7 @@ export const GlobalProvider=({children})=>{
         try{
 
             const token=localStorage.getItem('auth-token');
-            const response=await fetch('http://localhost:4000/tokenIsValid',{
+            const response=await fetch('user/tokenIsValid',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json',
@@ -61,7 +61,7 @@ export const GlobalProvider=({children})=>{
     async function logInUser(user){
         try{
 
-            const response=await fetch('http://localhost:4000/login',{
+            const response=await fetch('user/login',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -98,7 +98,7 @@ export const GlobalProvider=({children})=>{
     async function registerUser(user){
 
         try{
-            const response=await fetch('http://localhost:4000/register',{
+            const response=await fetch('user/register',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -142,7 +142,7 @@ export const GlobalProvider=({children})=>{
     async function addMovie(userId,movieId,runtime,movieTitle,moviePoster,movieRating){
         try{
 
-            const response=await fetch('http://localhost:4000/addMovie',{
+            const response=await fetch('movie/addMovie',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -174,7 +174,7 @@ export const GlobalProvider=({children})=>{
 
     async function removeMovie(userId,movieId){
         try{
-            const response=await fetch('http://localhost:4000/removeMovie',{
+            const response=await fetch('movie/removeMovie',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'

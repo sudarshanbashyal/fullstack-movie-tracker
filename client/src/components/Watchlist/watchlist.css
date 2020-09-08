@@ -1,5 +1,6 @@
 .Watchlist {
   max-width: 1300px;
+  min-height: 80vh;
   margin-top: 70px !important;
   margin: auto;
   position: relative;
@@ -89,6 +90,7 @@
 }
 
 .Watchlist .list-container .WatchSingle .trash {
+  z-index: 10;
   -webkit-transform: scale(2);
           transform: scale(2);
   position: absolute;

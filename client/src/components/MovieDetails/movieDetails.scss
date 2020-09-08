@@ -113,7 +113,7 @@ $green:#559C82;
                     
                     @include button($yellow,10px);
                     position: relative;
-                    z-index: -2;
+                    z-index: 10;
 
                 }
 

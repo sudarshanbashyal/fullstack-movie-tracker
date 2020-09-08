@@ -18,7 +18,7 @@ const Watchlist = () => {
         }
     },[state.user])
 
-    return (
+    if(state.movieList[0])return (
         <div className='Watchlist full-container'>
             <h1 className="title">
                 My List
@@ -40,6 +40,13 @@ const Watchlist = () => {
                 }
             </div>
 
+        </div>
+    )
+    else return(
+        <div className='Watchlist full-container'>
+            <h1 className="title">
+                Empty! Add some movies to your Watchlist.
+            </h1>
         </div>
     )
 }

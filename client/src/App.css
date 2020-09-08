@@ -6,6 +6,10 @@
     color: black;
 }
 
+.App{
+    position: relative;
+}
+
 .react-autosuggest__container 
 {
     position: relative;

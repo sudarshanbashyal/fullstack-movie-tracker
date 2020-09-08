@@ -1,9 +1,12 @@
 import React, {useContext} from 'react';
+import {useHistory} from 'react-router-dom';
 import {gql,useQuery} from '@apollo/client';
 import './movieDetails.css';
 import VideoPlayer from './VideoPlayer';
 import SimilarList from '../MovieLists/SimilarList';
 import { GlobalContext } from '../../context/GlobalState';
+
+import NotFound from '../404/404';
 
 import {starSvg, clockSvg, dateSvg, dollarSvg, bookmarkStroke} from './Svg.js';
 
@@ -29,10 +32,12 @@ const MOVIE_QUERY=gql`
 
 const MovieDetails = ({match}) => {
 
+    const history=useHistory();
+
     let id=match.params.id
     id=parseInt(id)
 
-    const {data}=useQuery(MOVIE_QUERY,{
+    const {data, loading, error}=useQuery(MOVIE_QUERY,{
         variables:{id}
     })
 
@@ -58,7 +63,15 @@ const MovieDetails = ({match}) => {
         else watchListBtn=addListBtn;
     }
 
-    return (
+    console.log(data);
+
+    if(data&&!data.id){
+        return(
+            <NotFound />
+        )
+    }
+
+    else return (
         
         <div className='MovieDetails full-container'>
             {

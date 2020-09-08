@@ -4,8 +4,9 @@
   "description": "A full-stack movie tracker app made with react and node.",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index",
-    "dev": "node index"
+    "server": "nodemon server",
+    "dev": "node server",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Sudarshan Bashyal",
   "license": "MIT",

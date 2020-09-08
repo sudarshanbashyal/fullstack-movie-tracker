@@ -3,7 +3,6 @@ import React,{useEffect,useState} from 'react';
 const VideoPlayer = ({id}) => {
 
     const [videoKey,setVideoKey]=useState('');
-    const [playing,setPlaying]=useState(false);
     
     useEffect(()=>{
         (async function getVideo(){

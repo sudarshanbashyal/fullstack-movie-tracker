@@ -5,9 +5,9 @@ import {Router,Switch,Route} from 'react-router-dom';
 
 import Nav from './components/Navbar/Nav';
 import Home from './components/Home/Home';
-import Footer from './components/Footer/Footer';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import Genres from './components/Genre/Genres';
+import NotFound from './components/404/404';
 
 import Watchlist from './components/Watchlist/Watchlist';
 
@@ -18,7 +18,7 @@ import history from './history';
 import ModalContainer from './components/Modal/ModalContainer';
 
 const client=new ApolloClient({
-    uri:'http://localhost:4000/graphql',
+    uri:'/graphql',
     cache: new InMemoryCache()
 })
 
@@ -26,7 +26,7 @@ const client=new ApolloClient({
 const App = () => {
 
     // authenticate the token on app startup and store the user
-    const {state,checkToken}=useContext(GlobalContext);
+    const {checkToken}=useContext(GlobalContext);
 
     useEffect(()=>{
 
@@ -45,8 +45,8 @@ const App = () => {
                         <Route exact path='/movie/:id' component={MovieDetails} />
                         <Route exact path='/genres' component={Genres} />
                         <Route exact path='/mylist' component={Watchlist} />
+                        <Route path='*' component={NotFound} />
                     </Switch>
-                    <Footer />
                     <ModalContainer />
                 </Router>
 
