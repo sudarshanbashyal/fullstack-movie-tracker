@@ -5,8 +5,8 @@ A full stack movie-tracker application made with React and Node.
 ## Demo
 
 **Log in with the following credentials for a full tour of the app.** <br /><br />
-**Email**:test@user.com <br />
-**Password**:test
+**Email**: test@user.com <br />
+**Password**: test
 
 [See Demo](https://stark-thicket-66278.herokuapp.com/)
 
