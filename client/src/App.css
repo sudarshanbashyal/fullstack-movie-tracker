@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     color: black;
+    outline:none;
 }
 
 .App{
