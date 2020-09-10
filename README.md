@@ -21,9 +21,6 @@ npm start
 ```
 **You will have to create environment variables for your own TMDB api, Mongodb-Atlas and JWT tokens.**
 
-**You will have to create environment variables for your own TMDB api, Mongodb-Atlas and JWT tokens.**
-
-
 ## Tech-Stack
 
 I've used the following stack to build my application (small libraries not included.)
